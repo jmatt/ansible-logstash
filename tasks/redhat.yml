@@ -12,3 +12,9 @@
     gpgcheck: yes
     enabled: yes
     file: logstash
+
+- name: Install Logstash package.
+  yum: name=logstash update_cache=yes state=latest
+
+- name: Configure Logstash.
+  include: logstash.yml
